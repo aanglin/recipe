@@ -6,6 +6,12 @@
       body {
         font-family: 'Fuzzy Bubbles', serif;
         font-size: 20px;
-        
+        @apply bg-gray-800;
       }
-   
+
+      /* @layer base {
+        body {
+          @apply bg-gray-800;
+        }
+      }
+    */
