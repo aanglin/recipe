@@ -1,4 +1,3 @@
-import Background from "../public/images/background.jpg";
 import Image from "next/image";
 import Second from "../public/images/second.jpg";
 import Link from "next/link";

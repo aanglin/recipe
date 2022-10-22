@@ -1,13 +1,16 @@
+import { data } from "autoprefixer";
 import axios from "axios";
 import { useState } from "react";
 import { ImSearch } from "react-icons/im";
 
 function Homepage() {
   const [query, setQuery] = useState("");
+  const [recipe, setRecipe] = useState("");
   const [title, setTitle] = useState("");
   const [ingredients, setIngredient] = useState("");
   const [servings, setServing] = useState("");
   const [instructions, setInstructions] = useState("");
+  
 
   const options = {
     method: "GET",
@@ -23,12 +26,14 @@ function Homepage() {
     axios
       .request(options)
       .then(function (response) {
+        setRecipe(response.data);
         setTitle(response.data[0].title);
         setIngredient(response.data[0].ingredients);
         setServing(response.data[0].servings);
         setInstructions(response.data[0].instructions);
-        setQuery('')
-        console.log(response.data);
+        setQuery("");
+        // console.log(response.data);
+        console.log(recipe)
       })
       .catch(function (error) {
         console.error(error);
@@ -36,40 +41,58 @@ function Homepage() {
   };
   return (
     <>
-      <div className="relative flex items-center max-w-[500px] w-full m-auto pt-4 text-white z-10 ">
-        <form
-          onSubmit={getRecipe}
-          className="flex justify-between items-center w-full m-auto p-3 bg-transparent border border-gray-400 text-black  rounded-2xl"
-        >
+    <h1 className="bg-gray-800 text-center text-teal-500 font-bold text-4xl p-5">Aaron's Recipe Book</h1>
+      <div className="bg-gray-800  h-[277rem] p-4 justify-center">
+        <div className="relative flex items-center max-w-[500px] w-full m-auto pt-4 text-white z-10 ">
+          <form
+            onSubmit={getRecipe}
+            className="flex justify-between items-center w-full m-auto p-3 bg-transparent border border-gray-400 text-white  rounded-2xl"
+          >
             <div>
-          <input
-          onChange={(e) => setQuery(e.target.value)}
-          className="bg-transparent border-none text-black focus:outline-none text-2xl placeholder:text-black/10"
-          type='text'
-          placeholder='Search for a recipe'
-          value={query}
-          />
+              <input
+                onChange={(e) => setQuery(e.target.value)}
+                className="bg-transparent border-none text-white focus:outline-none text-2xl placeholder:text-white/15"
+                type="text"
+                placeholder="Search for a recipe"
+                value={query}
+              />
+            </div>
+            <button onClick={getRecipe}>
+              <ImSearch />
+            </button>
+          </form>
+        </div>
+
+        <div className="flex flex-col justify-center m-8 p-12 ">
+          <div className=" text-black max-w-[800px] w-full mx-auto bg-teal-500 p-8 px-8 rounded-lg">
+            <ul>
+              <div>
+                {Array.from(recipe).map(function (r, idx) {
+                  return (
+                    <>
+                      <div  key={idx} className="flex p-4 m-4 text-2xl  whitespace-nowrap ">
+                        <li className="text-center">{r.title}</li>
+                      </div>
+                      <li  className="text-center text-xl m-1 p-1">
+                        Ingredients
+                      </li>
+                      <li key={idx} className="flex flex-col ">{r.ingredients}</li>
+                      <li key={idx} className="text-center m-1 p-1">
+                        {r.servings} per person
+                      </li>
+                      <li key={idx} className="text-center m-1 p-1">How to Prepare</li>
+                      <li>{r.instructions}</li>
+                    </>
+                  );
+                })}
+              </div>
+            </ul>
           </div>
-      <button onClick={getRecipe}>
-        <ImSearch />
-      </button>
-        </form>
+        </div>
       </div>
-
-    <div className="flex flex-col justify-center m-8">
-      <div className="font-white text-white max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-lg">
-        <ul className="font-black">
-            <li>{title}</li>
-            <li>{ingredients}</li>
-            <li>{servings}</li>
-            <li>{instructions}</li>
-        </ul>
-      </div>
-
-      </div>
+      
     </>
   );
 }
-
 
 export default Homepage;
