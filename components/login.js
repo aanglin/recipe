@@ -45,11 +45,11 @@ export default function Login() {
           <p className="text-center text-white font-bold">
             If you do not have an account please
           </p>
-          <div className="text-center text-white font-bold m-2  ">
+          <div className="text-center text-white font-bold m-2 ">
           <Link 
           className=""
           href="signup">
-            <a className="">Signup</a>
+            <a >Signup</a>
           </Link>
           </div>
         </form>

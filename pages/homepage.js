@@ -73,13 +73,9 @@ setLoading(false);
             </button>
           </form>
         </div>
-        {Array.from(recipe).map(function () {
-          return (
-            <div className="flex flex-row">
+            <div className="flex flex-col">
               <RecipeCards data={recipe} />
             </div>
-          );
-        })}
       </div>
     </>
   );
