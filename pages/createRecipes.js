@@ -2,7 +2,9 @@ import Sidebar from "../components/sidebar";
 import Head from "next/head";
 
 
-function Favorites() {
+
+function CreateRecipes() {
+  
   return (
     <>
     <Head>
@@ -14,15 +16,15 @@ function Favorites() {
         />
       </Head>
     <Sidebar />
-    <div className="bg-gray-800 flex flex-col justify-center ">
+    <div className="bg-gray-800 flex flex-col justify-center " >
     <form 
-    className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-lg" action="/api/login" method="post">
+    className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-lg" action="/api/createRecipes" method="post">
       <h2 className="text-4xl text-white font-bold text-center">Personal Recipes</h2>
       <div className="flex flex-col text-gray-400 py-2">
         <label>Title</label>
         <input
           className="rounded-lg bg-gray-700 mt-2 p-2 focus:border--blue-500 focus:bg-gray-800 focus:outline-none h-9"
-          name="title"
+          name="Title"
           type="text"
         />
       </div>
@@ -30,7 +32,7 @@ function Favorites() {
         <label>Serving Size</label>
         <input
           className="rounded-lg bg-gray-700 mt-2 p-2 focus:border--blue-500 focus:bg-gray-800 focus:outline-none"
-          name="serving"
+          name="servingSize"
           type="text"
         />
       </div>
@@ -38,7 +40,7 @@ function Favorites() {
         <label>Ingredients</label>
         <input
           className="rounded-lg bg-gray-700 mt-2 p-2 focus:border--blue-500 focus:bg-gray-800 focus:outline-none"
-          name="serving"
+          name="Ingredients"
           type="text"
         />
       </div>
@@ -46,12 +48,13 @@ function Favorites() {
         <label>Instructions</label>
         <input
           className="rounded-lg bg-gray-700 mt-2 p-2 focus:border--blue-500 focus:bg-gray-800 focus:outline-none"
-          name="serving"
+          name="Instructions"
           type="text"
         />
       </div>
       <div className="flex flex-col text-gray-400 py-1 text-center">
-      <button className="border rounded-xl bg-teal-500 w-full p-1 my-5 hover:bg-teal-400 text-white">Submit</button>
+      <button 
+      className="border rounded-xl bg-teal-500 w-full p-1 my-5 hover:bg-teal-400 text-white">Save</button>
       </div>
         </form>
       </div>
@@ -59,4 +62,4 @@ function Favorites() {
   )
 }
 
-export default Favorites
+export default CreateRecipes;

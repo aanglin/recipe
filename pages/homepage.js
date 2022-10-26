@@ -56,9 +56,11 @@ function Homepage() {
         />
       </Head>
       <Sidebar />
-      <h1 className="text-center text-teal-500 font-bold text-4xl">
+      
+      <h1 className="text-center text-teal-500 font-bold text-4xl pt-5">
         Foodies Recipe Book
       </h1>
+     
       <div className="p-4 justify-center">
         <div className="relative flex items-center justify-center max-w-[500px] w-full m-auto pt-4 text-white z-10 ">
           <form
