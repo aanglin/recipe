@@ -1,8 +1,17 @@
 import Image from "next/image";
 import Second from "../public/images/second.jpg";
 import Link from "next/link";
+//  import Cookies from 'js-cookie';
+//   import { useRouter } from 'next/router';
 
 export default function Login() {
+  //  const router = useRouter();
+
+  // const logIn = (e) => {
+  //   e.preventDefault();
+  //   Cookies.set("loggedin", true);
+  //    router.push("/homepage");
+  // };
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
       <div className="hidden sm:block h-fit w-full">
@@ -16,7 +25,9 @@ export default function Login() {
         />
       </div>
       <div className="bg-gray-800 flex flex-col justify-center">
-        <form className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-lg" action="/api/login" method="post">
+        <form 
+        // onSubmit={(e) => logIn(e)}
+        className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-lg" action="/api/login" method="post">
           <h2 className="text-4xl text-white font-bold text-center">SIGN IN</h2>
           <div className="flex flex-col text-gray-400 py-2">
             <label>Email</label>
