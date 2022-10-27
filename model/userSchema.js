@@ -10,15 +10,11 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        unique: true,
+        allowNull: false,
         required: true,
-        minlength: 5,
+        minlength: [5],
       },
       
 })
-
-// const User =models.User || model('User', userSchema)
-
-// export default User;
 
  module.exports = mongoose.models.User || mongoose.model('User', userSchema);
