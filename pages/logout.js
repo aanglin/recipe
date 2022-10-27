@@ -1,12 +1,14 @@
 import Image from "next/image"
 import Finish from "../public/images/finished.jpg"
-
 import Cookies from "js-cookie"
+import { useRouter } from "next/router"
 
 function logout() {
-    const erase = () =>{
+   const router = useRouter();
+    const erase = e =>{
+      e.preventDefault()
       Cookies.remove("loggedin")
-      res.redirect("/")
+     router.push("/")
       
     }
   return (
@@ -23,7 +25,6 @@ function logout() {
       </div>
       <div className="bg-gray-800 flex flex-col justify-center">
         <form 
-        //  onSubmit={(e) => Cookies.remove('loggedin', false)}
         className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-lg">
          <h1 className="text-center text-teal-500 text-3xl p-2">Go and Enjoy your meal!!!!!</h1>
          <div className="flex flex-col text-gray-400 py-1 text-center">
