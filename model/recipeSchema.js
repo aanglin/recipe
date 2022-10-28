@@ -2,13 +2,12 @@ import mongoose from "mongoose";
 
 const recipeSchema = new mongoose.Schema({
     title: {
-    type: String,
-    required: true,
-    // unique: true,
-    trim: true,
+      type: String,
+      trim: true,
     },
     servingSize: {
         type: String,
+        trim: true,
         // required: true,
       },
       ingredients: {

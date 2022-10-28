@@ -24,7 +24,7 @@ function CreateRecipes() {
         <label>Title</label>
         <input
           className="rounded-lg bg-gray-700 mt-2 p-2 focus:border--blue-500 focus:bg-gray-800 focus:outline-none h-9"
-          name="Title"
+          name="title"
           type="text"
         />
       </div>
@@ -40,7 +40,7 @@ function CreateRecipes() {
         <label>Ingredients</label>
         <input
           className="rounded-lg bg-gray-700 mt-2 p-2 focus:border--blue-500 focus:bg-gray-800 focus:outline-none"
-          name="Ingredients"
+          name="ingredients"
           type="text"
         />
       </div>
@@ -48,7 +48,7 @@ function CreateRecipes() {
         <label>Instructions</label>
         <input
           className="rounded-lg bg-gray-700 mt-2 p-2 focus:border--blue-500 focus:bg-gray-800 focus:outline-none"
-          name="Instructions"
+          name="instructions"
           type="text"
         />
       </div>
