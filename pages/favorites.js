@@ -2,7 +2,7 @@ import Head from "next/head";
 import Sidebar from "../components/sidebar";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Recipes from "../components/recipes";
+import Recipes from "../components/favoritesCards";
 
 function Favorites() {
   const [data, setData] = useState("");
@@ -32,8 +32,10 @@ function Favorites() {
         />
       </Head>
       <Sidebar />
-      <h1 className="text-center text-teal-500 font-bold text-4xl pt-10 underline">My Very Own Recipes</h1>
-      <div className="relative flex items-center justify-center max-w-[500px] w-full m-auto pt-4 text-white z-10">
+      <h1 className="text-center text-teal-500 font-bold text-4xl pt-10 underline">
+        My Very Own Recipes
+      </h1>
+      <div className=" flex flex-wrap items-center justify-center  w-full m-auto pt-4 text-white z-10">
         <Recipes data={data} />
       </div>
     </>
