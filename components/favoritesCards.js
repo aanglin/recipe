@@ -17,8 +17,8 @@ function Recipes({ data }) {
       </Head>
       {Array.from(data).map(function (r, _id) {
         return (
-          <div className="flex flex-col justify-center  pt-56" key={_id}>
-            <div className="flex  justify-center m-8 p-12 ">
+          <div className="flex flex-col justify-center  " key={_id}>
+            <div className="flex  justify-center m-2 p-12 ">
               <div className="flex text-black max-w-[800px] w-full mx-auto bg-teal-500 p-8 px-8 rounded-lg">
                 <ul>
                   <div>

@@ -14,7 +14,7 @@ function Favorites() {
     method: "Get",
     url: "/api/favorites",
   };
-  const getFavorites = (e) => {
+  const getFavorites = () => {
     axios.request(options).then(function (res) {
       setData(res.data);
       console.log(data);
@@ -32,10 +32,10 @@ function Favorites() {
         />
       </Head>
       <Sidebar />
-      <h1 className="text-center text-teal-500 font-bold text-4xl pt-10 underline">
+      <h1 className="text-center text-teal-500 font-bold text-4xl pt-10 pb-28 underline">
         My Very Own Recipes
       </h1>
-      <div className=" flex flex-wrap items-center justify-center  w-full m-auto pt-4 text-white z-10">
+      <div className=" flex flex-wrap items-center justify-center  w-full m-auto  ">
         <Recipes data={data} />
       </div>
     </>
