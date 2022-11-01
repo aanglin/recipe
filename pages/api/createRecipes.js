@@ -1,7 +1,7 @@
-import connect from "../../lib/mongodb";
+import connectDB from "../../lib/mongodb";
 import Recipe from "../../model/recipeSchema"
 
-connect();
+connectDB();
 
 export default async function CreateRecipe(req, res) {
     try{

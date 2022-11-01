@@ -1,17 +1,41 @@
-import connect from "../../lib/mongodb";
+import connectDB from "../../lib/mongodb";
 import User from "../../model/userSchema";
+import bcrypt from "bcrypt";
 
-connect();
+connectDB();
 
 export default async function Signup(req, res) {
-    try{
-        const user = await User.create(req.body);
-        res.redirect('/')
-        if(!user){
-            return res.json({"code": 'User not created'})
-        }
-    }catch(error) {
-        res.status(400).json({status: 'Not able to create user'})
-    }
+    bcrypt
+    .hash(req.body.password, 10)
+    .then((hashedPassword) => {
+      // create a new user instance and collect the data
+      const user = new User({
+        email: req.body.email,
+        password: hashedPassword,
+      });
+
+      // save the new user
+      user
+        .save()
+        // return success if the new user is added to the database successfully
+        .then(() => {
+          res.redirect('/')
+        })
+        // catch error if the new user wasn't added successfully to the database
+        .catch((error) => {
+          res.status(500).send({
+            message: "Error creating user",
+            error,
+          });
+        });
+    })
+    // catch error if the password hash isn't successful
+    .catch((e) => {
+      res.status(500).send({
+        message: "Password was not hashed successfully",
+        e,
+      });
+    });
+
 }
    

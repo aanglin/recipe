@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Second from "../public/images/second.jpg";
 import Link from "next/link";
-  import Cookies from 'js-cookie';
+   import Cookies from 'js-cookie';
 //   import { useRouter } from 'next/router';
 
 export default function Login() {
@@ -45,7 +45,7 @@ export default function Login() {
             />
           </div>
           <div className="flex flex-col text-gray-400 py-1 text-center">
-          <button onClick={() => Cookies.set("loggedin", true)} className="border rounded-xl bg-teal-500 w-full p-1 my-5 hover:bg-teal-400 text-white">Log In</button>
+          <button onClick={() => Cookies.get("loggedin", true)} className="border rounded-xl bg-teal-500 w-full p-1 my-5 hover:bg-teal-400 text-white">Log In</button>
           </div>
           <p className="text-center text-white font-bold">
             If you do not have an account please

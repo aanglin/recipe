@@ -1,14 +1,59 @@
-import connect from "../../lib/mongodb";
+import connectDB from "../../lib/mongodb";
 import User from "../../model/userSchema";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+// import Cookies from 'js-cookie';
 
-connect();
+connectDB();
 
-export default async function Signup(req, res) {
-  const { email, password } = req.body;
-  const user = await User.findOne({ email, password });
-  if (!user) {
-    return res.json({ status: "Not able to find user" });
-  } else {
-    res.redirect("/homepage");
-  }
+export default  async function Signup(req, res) {
+  await User.findOne({ email: req.body.email })
+
+  // if email exists
+  .then((user) => {
+    // compare the password entered and the hashed password found
+    bcrypt
+      .compare(req.body.password, user.password)
+
+      // if the passwords match
+      .then((passwordCheck) => {
+
+        // check if password matches
+        if(!passwordCheck) {
+          return res.status(400).send({
+            message: "Passwords does not match",
+            error,
+          });
+        }
+
+        //   create JWT token
+        const token = jwt.sign(
+          {
+            userId: user._id,
+            userEmail: user.email,
+          },
+          "RANDOM-TOKEN",
+          { expiresIn: "24h" }
+        );
+
+        //   return success response
+        res.redirect('/homepage')
+        // Cookies.set("loggedin", true);
+        console.log(token)
+      })
+      // catch error if password does not match
+      .catch((error) => {
+        res.status(400).send({
+          message: "Passwords does not match",
+          error,
+        });
+      });
+  })
+  // catch error if email does not exist
+  .catch((e) => {
+    res.status(404).send({
+      message: "Email not found",
+      e,
+    });
+  });
 }
