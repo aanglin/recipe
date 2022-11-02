@@ -5,16 +5,10 @@ import RecipeCards from "../components/recipeCards";
 import Head from "next/head";
 import Sidebar from "../components/sidebar";
 
-
-
 function Homepage() {
   const [query, setQuery] = useState("");
   const [recipe, setRecipe] = useState("");
   const [loading, setLoading] = useState(false);
-  // const [title, setTitle] = useState("");
-  // const [ingredients, setIngredient] = useState("");
-  // const [servings, setServing] = useState("");
-  // const [instructions, setInstructions] = useState("");
 
   const options = {
     method: "GET",
@@ -34,12 +28,6 @@ function Homepage() {
         setRecipe(response.data);
         setQuery("");
         setLoading(false);
-        // setTitle(response.data[0].title);
-        // setIngredient(response.data[0].ingredients);
-        // setServing(response.data[0].servings);
-        // setInstructions(response.data[0].instructions);
-        // console.log(response.data);
-        // console.log(recipe)
       })
       .catch(function (error) {
         console.error(error);
@@ -56,11 +44,11 @@ function Homepage() {
         />
       </Head>
       <Sidebar />
-      
+
       <h1 className="text-center text-teal-500 font-bold text-4xl pt-5">
         Foodies Recipe Book
       </h1>
-     
+
       <div className="p-4 justify-center">
         <div className="relative flex items-center justify-center max-w-[500px] w-full m-auto pt-4 text-white z-10 ">
           <form

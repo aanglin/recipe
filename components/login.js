@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Second from "../public/images/second.jpg";
 import Link from "next/link";
-   import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 //   import { useRouter } from 'next/router';
 
 export default function Login() {
@@ -24,9 +24,12 @@ export default function Login() {
         />
       </div>
       <div className="bg-gray-800 flex flex-col justify-center">
-        <form 
-        // onSubmit={(e) => logIn(e)}
-        className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-lg" action="/api/login" method="post">
+        <form
+          // onSubmit={(e) => logIn(e)}
+          className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-lg"
+          action="/api/login"
+          method="post"
+        >
           <h2 className="text-4xl text-white font-bold text-center">SIGN IN</h2>
           <div className="flex flex-col text-gray-400 py-2">
             <label>Email</label>
@@ -45,17 +48,20 @@ export default function Login() {
             />
           </div>
           <div className="flex flex-col text-gray-400 py-1 text-center">
-          <button onClick={() => Cookies.set("loggedin", true)} className="border rounded-xl bg-teal-500 w-full p-1 my-5 hover:bg-teal-400 text-white">Log In</button>
+            <button
+              onClick={() => Cookies.set("loggedin", true)}
+              className="border rounded-xl bg-teal-500 w-full p-1 my-5 hover:bg-teal-400 text-white"
+            >
+              Log In
+            </button>
           </div>
           <p className="text-center text-white font-bold">
             If you do not have an account please
           </p>
           <div className="text-center text-white font-bold m-2 ">
-          <Link 
-          className=""
-          href="signup">
-            <a >Signup</a>
-          </Link>
+            <Link className="" href="signup">
+              <a>Signup</a>
+            </Link>
           </div>
         </form>
       </div>

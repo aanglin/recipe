@@ -2,7 +2,7 @@ import connectDB from "../../lib/mongodb";
 import User from "../../model/userSchema";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-// import Cookies from 'js-cookie';
+ import Cookies from 'js-cookie';
 
 connectDB();
 
