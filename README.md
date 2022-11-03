@@ -3,6 +3,9 @@
 ![Foodie's Recipe](./public/images/foodies.png)
 <br></br>
 
+## Link to site:
+[Foodie's Recipe](https://recipe-jet.vercel.app)
+
 ## Description
 Are you hungry but do not know what to cook. Look no futher, we have the app for you. Introducing, Foodie's Recipe. This website you can look up recipes to make and save your very own recipes and have other cooks look at your recipes. 
 
