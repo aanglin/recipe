@@ -4,18 +4,18 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Recipes from "../components/favoritesCards";
 
-function Favorites() {
+async function Favorites() {
   const [data, setData] = useState("");
 
   useEffect(() => {
-    getFavorites();
+   getFavorites();
   }, []);
   const options = {
     method: "Get",
     url: "/api/favorites",
   };
-  const getFavorites = () => {
-    axios.request(options).then(function (res) {
+  const getFavorites = async () => {
+     await axios.request(options).then(function (res) {
       setData(res.data);
       console.log(data);
     });
