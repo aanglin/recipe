@@ -1,13 +1,14 @@
-import connectDB from "../../lib/mongodb";
+// import connectDB from "../../lib/mongodb";
+import clientPromise from "../../lib/connect"
 import User from "../../model/userSchema";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 //  import Cookies from 'js-cookie';
 
-connectDB();
-
 export default  async function Signup(req, res) {
-  await User.findOne({ email: req.body.email })
+   await clientPromise;
+  // const db = client.db("myFirstDatabase");
+ User.findOne({ email: req.body.email })
 
   // if email exists
   .then((user) => {

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Recipes from "../components/favoritesCards";
 
-async function Favorites() {
+function Favorites() {
   const [data, setData] = useState("");
 
   useEffect(() => {

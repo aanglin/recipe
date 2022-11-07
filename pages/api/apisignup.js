@@ -1,10 +1,12 @@
-import connectDB from "../../lib/mongodb";
+// import connectDB from "../../lib/mongodb";
+import clientPromise from "../../lib/connect";
 import User from "../../model/userSchema";
 import bcrypt from "bcrypt";
 
-connectDB();
+
 
 export default async function Signup(req, res) {
+  await clientPromise;
     bcrypt
     .hash(req.body.password, 10)
     .then((hashedPassword) => {
