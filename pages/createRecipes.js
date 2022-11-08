@@ -17,7 +17,7 @@ function CreateRecipes() {
         <form
           className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-lg"
           action="/api/favorites"
-          method="post"
+          method="POST"
         >
           <h2 className="text-4xl text-white font-bold text-center">
             Personal Recipes

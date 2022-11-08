@@ -11,7 +11,7 @@ function Favorites() {
    getFavorites();
   }, []);
   const options = {
-    method: "Get",
+    method: "GET",
     url: "/api/favorites",
   };
   const getFavorites = async () => {

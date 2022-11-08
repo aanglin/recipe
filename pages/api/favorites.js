@@ -9,8 +9,8 @@ export default async function getRecipe(req, res) {
     case "POST":
       let myItem = req.body;
       let myRecipe = await db.collection("recipes").insertOne(myItem);
+      // res.json(myRecipe);
       res.redirect('/homepage')
-      res.json(myRecipe);
       break;
     case "GET":
       const recipe = await db.collection("recipes").find({}).toArray();
