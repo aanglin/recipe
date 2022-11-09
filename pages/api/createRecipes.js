@@ -8,7 +8,7 @@ export default async function CreateRecipe(req, res) {
   try {
     let myItem = req.body;
     let myRecipe = await db.collection("recipes").insertOne(myItem);
-    router.push("/homepage");
+    router.push('/homepage').then(() => router.reload())
     if (!myRecipe) {
       return res.json({ code: "Recipe not saved" });
     }
