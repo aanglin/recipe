@@ -1,9 +1,7 @@
-// import connectDB from "../../lib/mongodb";
 import clientPromise from "../../lib/connect"
-import User from "../../model/userSchema";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-//  import Cookies from 'js-cookie';
+
 
 export default  async function Signup(req, res) {
    const client = await clientPromise;
