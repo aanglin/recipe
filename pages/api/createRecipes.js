@@ -1,15 +1,14 @@
-// import connectDB from "../../lib/mongodb";
-// import Recipe from "../../model/recipeSchema"
 import clientPromise from "../../lib/connect";
-// connectDB();
+import { useRouter } from "next/router";
 
 export default async function CreateRecipe(req, res) {
   const client = await clientPromise;
   const db = client.db("myFirstDatabase");
+  const router = useRouter();
   try {
     let myItem = req.body;
     let myRecipe = await db.collection("recipes").insertOne(myItem);
-    res.redirect("/homepage");
+    router.push("/homepage");
     if (!myRecipe) {
       return res.json({ code: "Recipe not saved" });
     }
