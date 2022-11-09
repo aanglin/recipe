@@ -7,7 +7,7 @@ export default async function CreateRecipe(req, res) {
   // const router = useRouter();
      let myItem = req.body;
      await db.collection("recipes").insertOne(myItem);
-     res.redirect('/homepage')
+     res.redirect("/homepage")
 
 
 }
