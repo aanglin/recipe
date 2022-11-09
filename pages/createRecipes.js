@@ -16,7 +16,7 @@ function CreateRecipes() {
       <div className="bg-gray-800 flex flex-col justify-center pt-36">
         <form
           className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-lg"
-          action="/api/favorites"
+          action="/api/createRecipes"
           method="POST"
         >
           <h2 className="text-4xl text-white font-bold text-center">
