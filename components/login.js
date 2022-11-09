@@ -28,7 +28,7 @@ export default function Login() {
           // onSubmit={(e) => logIn(e)}
           className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-lg"
           action="/api/login"
-          method="post"
+          method="Post"
         >
           <h2 className="text-4xl text-white font-bold text-center">SIGN IN</h2>
           <div className="flex flex-col text-gray-400 py-2">

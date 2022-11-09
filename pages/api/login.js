@@ -6,9 +6,9 @@ import jwt from "jsonwebtoken";
 //  import Cookies from 'js-cookie';
 
 export default  async function Signup(req, res) {
-   await clientPromise;
-  // const db = client.db("myFirstDatabase");
- User.findOne({ email: req.body.email })
+   const client = await clientPromise;
+   const db = client.db("myFirstDatabase");
+ await db.collection('users').findOne({ email: req.body.email })
 
   // if email exists
   .then((user) => {
