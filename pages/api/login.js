@@ -38,7 +38,7 @@ export default  async function Signup(req, res) {
         );
 
         //   return success response
-        res.redirect('/homepage')
+        res.redirect(302, '/homepage')
         // Cookies.set("loggedin", true);
         console.log(token)
       })
