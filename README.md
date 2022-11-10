@@ -26,6 +26,6 @@ Are you hungry but do not know what to cook. Look no futher, we have the app for
 <td align="center"><a href="https://github.com/aanglin"><img src="https://avatars.githubusercontent.com/u/101485583?v=4" width="100px;" alt=""/><br /><sub><b>Aaron Anglin</b></sub></a></td>
 
 ## Questions
-Feel free to contact any contributing developer with suggestions for improvements, questions or concerns.
+Feel free to contact me with suggestions for improvements, questions or concerns.
 <br>
 [Email: Aaron Anglin](mailto:aaron.anglin101@gmail.com)
