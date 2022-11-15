@@ -8,12 +8,6 @@ function Recipes({ data }) {
     <>
       <Head>
         <meta charset="utf-8" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       {Array.from(data).map(function (r, _id) {
         return (

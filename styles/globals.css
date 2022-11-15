@@ -3,15 +3,8 @@
 @tailwind utilities;
 
 
-      body {
+       body {
         font-family: 'Fuzzy Bubbles', cursive;
         font-size: 20px;
         @apply bg-gray-800;
       }
-
-      /* @layer base {
-        body {
-          @apply bg-gray-800;
-        }
-      }
-    */

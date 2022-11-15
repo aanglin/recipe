@@ -1,14 +1,9 @@
 import Link from "next/link";
-import Head from "next/head";
 
 
 export default function Sidebar(){
     return (
         <>
-        <Head>
-        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
-        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
-        </Head>
         <button id="dropdownMenuIconHorizontalButton" data-dropdown-toggle="dropdownDotsHorizontal" className="fixed inline-flex items-center p-2 text-sm font-medium text-center text-teal-500  rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-teal-500 focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-teal-900 dark:focus:ring-gray-600" type="button"> 
   <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
 </button>
