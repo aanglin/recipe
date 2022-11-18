@@ -10,11 +10,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap"
           rel="stylesheet"
         />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css"
-        />
-        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+      
       </Head>
       <body>
         <Main />
