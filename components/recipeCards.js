@@ -14,7 +14,7 @@ function RecipeCards({ data }) {
         return (
           <div className="flex flex-col justify-center" key={i}>
             <div className="flex  justify-center m-8 p-12 ">
-              <div className="flex text-black max-w-[800px] w-full mx-auto bg-teal-500 p-8 px-8 rounded-lg">
+              <div className="flex text-black  w-fit mx-auto bg-teal-500 p-8 px-8 rounded-lg">
                 <ul>
                   <div>
                     <>
